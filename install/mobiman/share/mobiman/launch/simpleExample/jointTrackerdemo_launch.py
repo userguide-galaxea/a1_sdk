@@ -23,12 +23,12 @@ def generate_launch_description():
             FindPackageShare('mobiman').find('mobiman'),
             'auto_generated/x1_robot'
         )),
-        DeclareLaunchArgument('eePose_sub_topic', default_value='/joint_states'),
+        DeclareLaunchArgument('eePose_sub_topic', default_value='/joint_states_host'),
         DeclareLaunchArgument('eePose_pub_topic', default_value='/end_effector_pose'),
         DeclareLaunchArgument('joint_states_sub_topic', default_value='/joint_states_host'),
         DeclareLaunchArgument('arm_joint_command_topic', default_value='/arm_joint_command_host'),
         DeclareLaunchArgument('arm_joint_target_position', default_value='/arm_joint_target_position'),
-
+        DeclareLaunchArgument('ee_frame', default_value='arm_seg6'),
         Node(
             package='mobiman',
             executable='jointTracker_demo_node',
@@ -43,6 +43,17 @@ def generate_launch_description():
                 'libFolder': LaunchConfiguration('libFolder'),
             }],
 
+        ),
+        Node(
+            package='mobiman',
+            executable='eepose_pub_node',
+            output='screen',
+            parameters=[{
+                'urdfFile': LaunchConfiguration('urdfFile'),
+                'ee_frame': LaunchConfiguration('ee_frame'),
+                'eePose_sub_topic': LaunchConfiguration('eePose_sub_topic'),
+                'eePose_pub_topic': LaunchConfiguration('eePose_pub_topic')
+            }],
         ),
         Node(
             package='robot_state_publisher',

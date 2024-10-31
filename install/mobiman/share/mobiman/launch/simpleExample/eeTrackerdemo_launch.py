@@ -28,7 +28,7 @@ def generate_launch_description():
         DeclareLaunchArgument('joint_states_sub_topic', default_value='/joint_states_host'),
         DeclareLaunchArgument('arm_joint_command_topic', default_value='/arm_joint_command_host'),
         DeclareLaunchArgument('a1_ee_target', default_value='/a1_ee_target'),
-
+        DeclareLaunchArgument('ee_frame', default_value='arm_seg6'),
         Node(
             package='mobiman',
             executable='eeTracker_demo_node',
@@ -43,6 +43,17 @@ def generate_launch_description():
                 'libFolder': LaunchConfiguration('libFolder'),
             }],
 
+        ),
+        Node(
+            package='mobiman',
+            executable='eepose_pub_node',
+            output='screen',
+            parameters=[{
+                'urdfFile': LaunchConfiguration('urdfFile'),
+                'ee_frame': LaunchConfiguration('ee_frame'),
+                'eePose_sub_topic': LaunchConfiguration('eePose_sub_topic'),
+                'eePose_pub_topic': LaunchConfiguration('eePose_pub_topic')
+            }],
         ),
         Node(
             package='ocs2_mobile_manipulator_ros',
