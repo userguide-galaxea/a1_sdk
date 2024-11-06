@@ -1,4 +1,4 @@
-prefix=/home/system/Documents/release_test/install
+prefix=/home/systemg/work/ws_arm_usb/install
 
 Name: mobiman
 Description: Description of mobiman

@@ -1,13 +1,13 @@
-prefix=/home/system/Documents/release_test/install
-exec_prefix=/home/system/Documents/release_test/install
-libdir=/home/system/Documents/release_test/install/lib
-bindir=/home/system/Documents/release_test/install/bin
-pkglibdir=/home/system/Documents/release_test/install/lib/pinocchio
-includedir=/home/system/Documents/release_test/install/include
-datarootdir=/home/system/Documents/release_test/install/share
-pkgdatarootdir=/home/system/Documents/release_test/install/share
-docdir=/home/system/Documents/release_test/install/share/doc/pinocchio
-doxygendocdir=/home/system/Documents/release_test/install/share/doc/pinocchio/doxygen-html
+prefix=/home/systemg/work/ws_arm_usb/install
+exec_prefix=/home/systemg/work/ws_arm_usb/install
+libdir=/home/systemg/work/ws_arm_usb/install/lib
+bindir=/home/systemg/work/ws_arm_usb/install/bin
+pkglibdir=/home/systemg/work/ws_arm_usb/install/lib/pinocchio
+includedir=/home/systemg/work/ws_arm_usb/install/include
+datarootdir=/home/systemg/work/ws_arm_usb/install/share
+pkgdatarootdir=/home/systemg/work/ws_arm_usb/install/share
+docdir=/home/systemg/work/ws_arm_usb/install/share/doc/pinocchio
+doxygendocdir=/home/systemg/work/ws_arm_usb/install/share/doc/pinocchio/doxygen-html
 
 Name: pinocchio
 Description: A fast and flexible implementation of Rigid Body Dynamics algorithms and their analytical derivatives
